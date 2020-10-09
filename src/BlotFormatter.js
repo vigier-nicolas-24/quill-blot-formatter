@@ -37,6 +37,10 @@ export default class BlotFormatter {
   }
 
   show(spec: BlotSpec) {
+    if (!this.quill.isEnabled()) {
+      return;
+    }
+
     this.currentSpec = spec;
     this.currentSpec.setSelection();
     this.setUserSelect('none');
@@ -47,6 +51,10 @@ export default class BlotFormatter {
 
   hide() {
     if (!this.currentSpec) {
+      return;
+    }
+
+    if (!this.quill.isEnabled()) {
       return;
     }
 
