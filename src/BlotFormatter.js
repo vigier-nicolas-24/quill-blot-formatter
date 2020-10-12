@@ -54,10 +54,6 @@ export default class BlotFormatter {
       return;
     }
 
-    if (!this.quill.isEnabled()) {
-      return;
-    }
-
     this.currentSpec.onHide();
     this.currentSpec = null;
     this.quill.root.parentNode.removeChild(this.overlay);
